@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Voice Controller",
+    "version": "1.0",
+    "description": "Control YouTube with voice commands",
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "*://*.youtube.com/*"
+    ]
+}
